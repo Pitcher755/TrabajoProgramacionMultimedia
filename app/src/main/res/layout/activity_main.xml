@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="18"
+        android:fontFamily="casual"
+        android:text="Calculadora"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="12"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/etNum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Introduce un número"
+        android:inputType="numberDecimal"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/etNum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Introduce otro número"
+        android:inputType="numberDecimal"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvOperaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Elige una operación"
+        android:textSize="24sp" />
+
+    <RadioGroup
+        android:id="@+id/rbgOperaciones"
+        android:layout_width="match_parent"
+        android:layout_height="263dp">
+
+        <RadioButton
+            android:id="@+id/rbSumar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sumar" />
+
+        <RadioButton
+            android:id="@+id/rbRestar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restar" />
+
+        <RadioButton
+            android:id="@+id/rbMultiplicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Multiplicar" />
+
+        <RadioButton
+            android:id="@+id/rbDividir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dividir" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular" />
+
+    <Button
+        android:id="@+id/btnBorrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Borrar" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btnMostrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar" />
+
+</GridLayout>
