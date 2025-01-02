@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/tvTitulo"
-        android:layout_width="209dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="18"
-        android:fontFamily="casual"
         android:text="Calculadora"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="12"
-        tools:visibility="visible" />
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/tvResultado"
@@ -32,6 +25,14 @@
         android:text="0"
         android:textSize="34sp" />
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginBottom="16dp"
+    android:paddingBottom="20dp">
+
     <EditText
         android:id="@+id/etNum1"
         android:layout_width="match_parent"
@@ -39,7 +40,8 @@
         android:ems="10"
         android:hint="Introduce un número"
         android:inputType="numberDecimal"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_marginBottom="8dp"/>
 
     <EditText
         android:id="@+id/etNum2"
@@ -50,66 +52,97 @@
         android:inputType="numberDecimal"
         android:textSize="24sp" />
 
+</LinearLayout>
+
     <TextView
         android:id="@+id/tvOperaciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Elige una operación"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
     <RadioGroup
         android:id="@+id/rbgOperaciones"
-        android:layout_width="match_parent"
-        android:layout_height="263dp">
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
 
-        <RadioButton
-            android:id="@+id/rbSumar"
-            android:layout_width="match_parent"
+        <GridLayout
+            android:layout_width="295dp"
             android:layout_height="wrap_content"
-            android:text="Sumar" />
+            android:columnCount="2"
+            android:paddingTop="20dp"
+            android:rowCount="2"
+            android:useDefaultMargins="true">
 
-        <RadioButton
-            android:id="@+id/rbRestar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Restar" />
+            <RadioButton
+                android:id="@+id/rbSumar"
+                android:layout_width="141dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:text="Sumar"
+                android:textSize="18sp" />
 
-        <RadioButton
-            android:id="@+id/rbMultiplicar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Multiplicar" />
+            <RadioButton
+                android:id="@+id/rbRestar"
+                android:layout_width="141dp"
+                android:layout_height="match_parent"
+                android:text="Restar"
+                android:textSize="18sp" />
 
-        <RadioButton
-            android:id="@+id/rbDividir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dividir" />
+            <RadioButton
+                android:id="@+id/rbMultiplicar"
+                android:layout_width="141dp"
+                android:layout_height="match_parent"
+                android:text="Multiplicar"
+                android:textSize="18sp" />
 
+            <RadioButton
+                android:id="@+id/rbDividir"
+                android:layout_width="141dp"
+                android:layout_height="match_parent"
+                android:text="Dividir"
+                android:textSize="18sp" />
+        </GridLayout>
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="match_parent"
+    <GridLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular" />
+        android:columnCount="2"
+        android:paddingTop="20dp"
+        android:useDefaultMargins="true">
 
-    <Button
-        android:id="@+id/btnBorrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Borrar" />
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Calcular"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar" />
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Borrar"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btnMostrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mostrar" />
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:textSize="18sp" />
 
-</GridLayout>
+        <Button
+            android:id="@+id/btnMostrar"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Mostrar"
+            android:textSize="18sp" />
+
+    </GridLayout>
+</LinearLayout>

@@ -1,16 +1,17 @@
 package trabajoEnfoque.calculadora;
 
-import static trabajoEnfoque.calculadora.R.*;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        configurarExclusionMutua();
 
         // Inicializar los componentes
         btnCalcular = findViewById(R.id.btnCalcular);
@@ -86,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
             }
            if (operacionSeleccionada == R.id.rbSumar){
                resultado = suma(num1, num2);
-           } else if (operacionSeleccionada == id.rbRestar){
+           } else if (operacionSeleccionada == R.id.rbRestar){
                resultado = resta(num1, num2);
-           } else if (operacionSeleccionada == id.rbMultiplicar){
+           } else if (operacionSeleccionada == R.id.rbMultiplicar){
                resultado = multiplicacion(num1, num2);
-           } else if (operacionSeleccionada == id.rbDividir){
+           } else if (operacionSeleccionada == R.id.rbDividir){
                resultado = division(num1, num2);
            }
             // Mostrar el resultado
@@ -175,6 +177,30 @@ public class MainActivity extends AppCompatActivity {
        String ultimoResultado = resultadoGuardado.getString("ultimoResultado", "No hay resultados guardados");
        tvResultado.setText(ultimoResultado);
        Toast.makeText(this, "Último resultado: " + ultimoResultado, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     *
+     */
+    private void configurarExclusionMutua() {
+        RadioButton rbSumar = findViewById(R.id.rbSumar);
+        RadioButton rbRestar = findViewById(R.id.rbRestar);
+        RadioButton rbMultiplicar = findViewById(R.id.rbMultiplicar);
+        RadioButton rbDividir = findViewById(R.id.rbDividir);
+
+        View.OnClickListener exclusividad = v -> {
+            if (v instanceof RadioButton) {
+                // Obtener el ID del RadioButton seleccionado
+                int idSeleccionado = v.getId();
+                // Configurar el RadioGroup para que registre el botón seleccionado
+                rbgOperaciones.check(idSeleccionado);
+            }
+        };
+
+        rbSumar.setOnClickListener(exclusividad);
+        rbRestar.setOnClickListener(exclusividad);
+        rbMultiplicar.setOnClickListener(exclusividad);
+        rbDividir.setOnClickListener(exclusividad);
     }
 
 }
