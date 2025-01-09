@@ -14,9 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calculadora"
+        android:drawableStart="@drawable/calculadora"
         android:textSize="34sp"
         android:gravity="center"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:id="@+id/tvResultado"
@@ -65,16 +66,16 @@
 
     <RadioGroup
         android:id="@+id/rbgOperaciones"
-        android:layout_width="365dp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center">
 
         <GridLayout
-            android:layout_width="295dp"
+            android:layout_width="312dp"
             android:layout_height="wrap_content"
             android:columnCount="2"
-            android:paddingTop="20dp"
+            android:paddingTop="15dp"
             android:rowCount="2"
             android:useDefaultMargins="true">
 
@@ -82,29 +83,33 @@
                 android:id="@+id/rbSumar"
                 android:layout_width="141dp"
                 android:layout_height="match_parent"
+                android:drawableStart="@drawable/mas"
                 android:fontFamily="sans-serif"
-                android:text="Sumar"
+                android:text=" Sumar"
                 android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/rbRestar"
                 android:layout_width="141dp"
                 android:layout_height="match_parent"
-                android:text="Restar"
+                android:drawableStart="@drawable/menos"
+                android:text=" Restar"
                 android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/rbMultiplicar"
-                android:layout_width="141dp"
+                android:layout_width="158dp"
                 android:layout_height="match_parent"
-                android:text="Multiplicar"
+                android:drawableStart="@drawable/multiplicacion"
+                android:text=" Multiplicar"
                 android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/rbDividir"
                 android:layout_width="141dp"
                 android:layout_height="match_parent"
-                android:text="Dividir"
+                android:drawableStart="@drawable/dividir"
+                android:text=" Dividir"
                 android:textSize="18sp" />
         </GridLayout>
     </RadioGroup>
@@ -121,6 +126,7 @@
             android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:text="Calcular"
+            android:drawableRight="@drawable/calcular"
             android:textSize="18sp" />
 
         <Button
@@ -128,6 +134,7 @@
             android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:text="Borrar"
+            android:drawableRight="@drawable/borrar"
             android:textSize="18sp" />
 
         <Button
@@ -135,6 +142,7 @@
             android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:text="Guardar"
+            android:drawableRight="@drawable/disquete"
             android:textSize="18sp" />
 
         <Button
@@ -142,6 +150,7 @@
             android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:text="Mostrar"
+            android:drawableRight="@drawable/mostrar"
             android:textSize="18sp" />
 
     </GridLayout>
